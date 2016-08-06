@@ -1,4 +1,3 @@
 class Log < ApplicationRecord
-  t.string :request, null: false
-  t.string :response, null: false
+  belongs_to :user
 end
