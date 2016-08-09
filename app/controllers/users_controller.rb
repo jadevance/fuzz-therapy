@@ -1,11 +1,10 @@
-class UsersController < ApplicationController
-  
+class UsersController < ApplicationController  
   force_ssl
 
-  def create
+  def signin
     if request.post?
       api_token = params[:api_authtoken]
-      User.find_or_create_new_user(api_token)
+      @user = User.find_or_create_new_user(api_token)
       # if nil, return an error "unable to save, please try again later"
     render :json [@user]
     end
