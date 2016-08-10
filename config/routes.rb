@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # post 'user/create',  to: 'users#create'
   post 'users/signin',  to: 'users#signin',  as: :signin
 
-  get 'api/index', to: 'api#index'
-  post 'api/index', to: 'api#index'
+  get 'api', to: 'api#index'
+  post 'api', to: 'api#index'
 
 end
