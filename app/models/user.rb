@@ -1,8 +1,12 @@
 class User < ApplicationRecord
 
   def self.find_user(uid) 
-    user = self.find_by(uid: auth_hash['user']['uid'])
-    return user
+    user = self.find_by(uid: uid)
+    if !user.nil?
+      return user
+    else 
+      return "User needs to make a profile"
+    end 
   end 
 
   def self.create_new_user(auth_hash)
