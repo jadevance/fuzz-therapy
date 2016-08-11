@@ -11,7 +11,7 @@ class User < ApplicationRecord
 
   def self.create_new_account(auth_hash)
       user                  = User.new 
-      user.uid              = auth_hash.uid.to_i
+      user.uid              = auth_hash.uid
       user.name             = auth_hash.name
       user.location         = auth_hash.location 
       user.availability     = auth_hash.availability
