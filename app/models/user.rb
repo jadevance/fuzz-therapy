@@ -11,14 +11,14 @@ class User < ApplicationRecord
 
   def self.create_new_account(auth_hash)
       user                  = User.new 
-      user.uid              = auth_hash.uid
-      user.name             = auth_hash.name
-      user.location         = auth_hash.location 
-      user.availability     = auth_hash.availability
-      user.dog_breed        = auth_hash.dog_breed
-      user.dog_name         = auth_hash.dog_name
-      user.dog_age          = auth_hash.dog_age.to_f
-      user.dog_picture      = auth_hash.dog_picture
+      user.uid              = auth_hash["uid"]
+      user.name             = auth_hash["name"]
+      user.location         = auth_hash["location"]
+      user.availability     = auth_hash["availability"]
+      user.dog_breed        = auth_hash["dog_breed"]
+      user.dog_name         = auth_hash["dog_name"]
+      user.dog_age          = auth_hash["dog_age"].to_f
+      user.dog_picture      = auth_hash["dog_picture"]
       user.save!
       
     if user.save
