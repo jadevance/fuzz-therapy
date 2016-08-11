@@ -4,7 +4,7 @@ class ApiController < ApplicationController
     if request.post?
       userID = params[:user]
       # user = User.find_user(userID)
-      render json: [user]
+      render json: [userID]
     else
       render json: ["This is a response from the API. Hello!"]
     end 
