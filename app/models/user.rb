@@ -5,7 +5,7 @@ class User < ApplicationRecord
     if !user.nil?
       return user
     else 
-      return "User needs to make a profile"
+      return nil
     end 
   end 
 

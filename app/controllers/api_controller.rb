@@ -1,13 +1,13 @@
 class ApiController < ApplicationController
-  force_ssl
+  # force_ssl
   def index
     if request.post?
       @userID = params[:user]
       user = User.find_user(@userID)
       if user.nil? 
-        render json: ["this data does not exist"]
+        render json: ["user: does not exist"]
       else 
-        render json: [user.class]
+        render json: [user]
       end
     else
       render json: ["This is a GET response from the API. Hello!"]
@@ -19,7 +19,7 @@ class ApiController < ApplicationController
       user_info = params
       user_profile = User.create_new_account(params) 
       if user.nil? 
-        render json: ["this data does not exist"]
+        render json: ["status: account did not save, please try again later"]
       else 
         render json: [user_profile]
       end
