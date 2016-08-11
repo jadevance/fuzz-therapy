@@ -7,7 +7,7 @@ class ApiController < ApplicationController
       if user.nil? 
         render json: ["this data does not exist"]
       else 
-        render json: [user]
+        render json: [user.class]
       end
     else
       render json: ["This is a GET response from the API. Hello!"]
