@@ -16,9 +16,9 @@ class ApiController < ApplicationController
 
   def create
     if request.post? 
-      user_info = params
+      # user_info = params
       user_profile = User.create_new_account(params) 
-      if user.nil? 
+      if user_profile.nil? 
         render json: ["status: account did not save, please try again later"]
       else 
         render json: [user_profile]
