@@ -14,7 +14,7 @@ class ApiController < ApplicationController
     if request.post? 
       user_info = params
       user_profile = User.create_new_account(params) 
-      render json: [user_profile]
+      render json: [user_info]
     else 
       render json: ["This is a response from the API. Hi!!"]
     end
