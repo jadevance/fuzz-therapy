@@ -4,9 +4,13 @@ class ApiController < ApplicationController
     if request.post?
       @userID = params[:user]
       user = User.find_user(@userID)
-      render json: [user]
+      if user.nil? 
+        render json: ["this data does not exist"]
+      else 
+        render json: [user]
+      end
     else
-      render json: ["This is a response from the API. Hello!"]
+      render json: ["This is a GET response from the API. Hello!"]
     end 
   end 
 
@@ -14,9 +18,13 @@ class ApiController < ApplicationController
     if request.post? 
       user_info = params
       user_profile = User.create_new_account(params) 
-      render json: [user_info]
+      if user.nil? 
+        render json: ["this data does not exist"]
+      else 
+        render json: [user_profile]
+      end
     else 
-      render json: ["This is a response from the API. Hi!!"]
+      render json: ["This is a GET response from the API. Hello!"]
     end
   end 
 

@@ -13,8 +13,8 @@ class User < ApplicationRecord
       user                  = User.new 
       user.uid              = auth_hash.uid
       user.name             = auth_hash.name
-      user.location         = auth_hash.image 
-      user.availability     = auth_hash.image 
+      user.location         = auth_hash.location 
+      user.availability     = auth_hash.availability
       user.dog_breed        = auth_hash.dog_breed
       user.dog_name         = auth_hash.dog_name
       user.dog_age          = auth_hash.dog_age
