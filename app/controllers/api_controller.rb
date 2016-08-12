@@ -1,6 +1,7 @@
 class ApiController < ApplicationController
-  # force_ssl
+  force_ssl
   skip_before_action :verify_authenticity_token
+  
   def index
     if request.post?
       @userID = params[:user]
@@ -17,7 +18,6 @@ class ApiController < ApplicationController
 
   def create
     if request.post? 
-      # user_info = params
       user_profile = User.create_new_account(params) 
       if user_profile.nil? 
         render json: ["status: account did not save, please try again later"]

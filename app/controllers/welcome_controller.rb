@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
-  config.force_ssl = true
+  force_ssl
   
   def index
     render json: ["hello, world!! Dogs are best."]
