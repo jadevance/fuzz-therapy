@@ -4,7 +4,7 @@ class ApiController < ApplicationController
   
   def index
     if request.post?
-      @userID = params[:user]
+      @userID = params[:uid]
       user = User.find_user(@userID)
       if user.nil? 
         render json: ["user: does not exist"]
