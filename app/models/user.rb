@@ -1,7 +1,7 @@
 class User < ApplicationRecord
 
   def self.find_user(uid) 
-    user = self.find_by(uid: uid)
+    user = User.find_by(uid: uid)
     if !user.nil?
       return user
     else 
