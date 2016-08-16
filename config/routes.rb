@@ -6,5 +6,7 @@ Rails.application.routes.draw do
 
   get 'api/create', to: 'api#create'
   post 'api/create', to: 'api#create'
-
+  
+  get 'api/photo', to: 'api#photo'
+  post 'api/photo', to: 'api#photo'
 end

@@ -29,4 +29,9 @@ class ApiController < ApplicationController
     end
   end 
 
+  def photo
+    # endpoint to handle image data from ios
+    # paperclip magic goes here
+  end 
+
 end

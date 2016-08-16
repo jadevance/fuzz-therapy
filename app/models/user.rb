@@ -18,6 +18,8 @@ class User < ApplicationRecord
       user.dog_breed     = auth_hash["user"]["dog_breed"]
       user.dog_name      = auth_hash["user"]["dog_name"]
       user.dog_age       = auth_hash["user"]["dog_age"]
+      # before action: picture url from S3
+      # insert it into the PG database 
       user.dog_picture   = auth_hash["user"]["dog_picture"]
       user.save!
       
