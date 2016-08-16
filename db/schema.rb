@@ -10,19 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160816190222) do
+ActiveRecord::Schema.define(version: 20160816190039) do
 
   create_table "users", force: :cascade do |t|
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
-    t.string   "name",                null: false
+    t.string   "name"
     t.string   "location",            null: false
     t.string   "availability",        null: false
     t.string   "uid",                 null: false
     t.string   "dog_name",            null: false
     t.integer  "dog_age"
     t.string   "dog_breed"
-    t.string   "dog_picture"
+    t.string   "dog_picture",         null: false
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"

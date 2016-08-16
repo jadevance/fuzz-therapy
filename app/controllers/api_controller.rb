@@ -30,6 +30,8 @@ class ApiController < ApplicationController
   end 
 
   def photo
+    dog_picture = params[:dog_picture]
+    User.upload_s3_photo(dog_picture)
     # endpoint to handle image data from ios
     # paperclip magic goes here
   end 
