@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160816181805) do
+ActiveRecord::Schema.define(version: 20160816190222) do
 
   create_table "users", force: :cascade do |t|
     t.datetime "created_at",          null: false
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20160816181805) do
     t.string   "dog_name",            null: false
     t.integer  "dog_age"
     t.string   "dog_breed"
-    t.string   "dog_picture",         null: false
+    t.string   "dog_picture"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
