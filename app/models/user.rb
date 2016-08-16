@@ -21,13 +21,13 @@ class User < ApplicationRecord
 
   def self.create_new_account(auth_hash)
       user               = User.new 
-      user.uid           = auth_hash["user"]["uid"]
-      user.name          = auth_hash["user"]["name"]
-      user.location      = auth_hash["user"]["location"]
-      user.availability  = auth_hash["user"]["availability"]
-      user.dog_breed     = auth_hash["user"]["dog_breed"]
-      user.dog_name      = auth_hash["user"]["dog_name"]
-      user.dog_age       = auth_hash["user"]["dog_age"]
+      user.uid           = auth_hash["uid"]
+      user.name          = auth_hash["name"]
+      user.location      = auth_hash["location"]
+      user.availability  = auth_hash["availability"]
+      user.dog_breed     = auth_hash["dog_breed"]
+      user.dog_name      = auth_hash["dog_name"]
+      user.dog_age       = auth_hash["dog_age"]
       
       # before action: picture url from S3
       # insert it into the PG database 
