@@ -1,6 +1,6 @@
 class User < ApplicationRecord
 
-  This method associates the attribute ":avatar" with a file attachment
+  # This method associates the attribute ":avatar" with a file attachment
   has_attached_file :avatar, styles: {
     thumb: '100x100>',
     square: '200x200#',
