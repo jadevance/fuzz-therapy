@@ -1,5 +1,5 @@
 class ApiController < ApplicationController
-  force_ssl
+  # force_ssl
   skip_before_action :verify_authenticity_token
   
   def index
@@ -31,7 +31,8 @@ class ApiController < ApplicationController
 
   def photo
     dog_picture = params[:dog_picture]
-    User.upload_s3_photo(dog_picture)
+    user = User.new 
+    user.avatar = dog_picture_data
     # endpoint to handle image data from ios
     # paperclip magic goes here
   end 
