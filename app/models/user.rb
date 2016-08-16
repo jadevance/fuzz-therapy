@@ -31,7 +31,7 @@ class User < ApplicationRecord
       
       # before action: picture url from S3
       # insert it into the PG database 
-      user.dog_picture   = auth_hash["user"]["dog_picture"]
+      user.dog_picture   = auth_hash["dog_picture"]
       user.save!
       
     if user.save
