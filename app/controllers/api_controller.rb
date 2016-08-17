@@ -1,9 +1,9 @@
 class ApiController < ApplicationController
   force_ssl
   skip_before_action :verify_authenticity_token
-  def initialize(params)
-    @userID = params[:uid]
-  end 
+  # def initialize(params)
+  #   @userID = params[:uid]
+  # end 
 
   def index
     if request.post?
