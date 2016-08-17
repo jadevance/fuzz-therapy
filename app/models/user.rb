@@ -34,7 +34,7 @@ class User < ApplicationRecord
   def self.search_for_matches(user_location)
     location = auth_hash["location"]
     matches =  []
-    matches << User.find_by(location: location)
+    matches << User.where(location: location)
     return matches
   end
 
@@ -48,7 +48,7 @@ class User < ApplicationRecord
       user.dog_name      = auth_hash["dog_name"]
       user.dog_age       = auth_hash["dog_age"]
       user.dog_picture   = auth_hash["dog_picture"]
-      user.save!
+      user.update!
       
     if user.save
       return user

@@ -1,7 +1,7 @@
 class ApiController < ApplicationController
   # force_ssl
   skip_before_action :verify_authenticity_token
-  
+
   def index
     if request.post?
       @userID = params[:uid]
@@ -38,8 +38,10 @@ class ApiController < ApplicationController
   end 
 
   def photo
-    user = User.find_user(@userID)
+    # Using known UID to update, need to send UID in post 
+    user = User.find_user("12345")
     user.dog_picture = params[:dog_picture]
+    user.dog_picture_url = user.dog_picture.url
     user.save! 
     render json: [user.dog_picture.url] 
   end 
