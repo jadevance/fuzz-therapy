@@ -34,8 +34,12 @@ class User < ApplicationRecord
   def self.search_for_matches(user_location)
     location = auth_hash["location"]
     matches =  []
-    matches << User.where(location: location)
-    return matches
+    matches << User.fuzzy_search(location: location)
+    if matches != nil 
+      return matches
+    else 
+      return "No matches found"
+    end
   end
 
   def self.edit_existing_account(auth_hash)
