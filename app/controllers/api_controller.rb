@@ -42,10 +42,10 @@ class ApiController < ApplicationController
 
   def photo
     user = User.find_user(params[:uid])
-    # user.dog_picture = params[:dog_picture]
+    user.dog_picture = params[:dog_picture]
     # user.dog_picture_url = user.dog_picture.url
-    # user.save! 
-    render json: [user] 
+    user.save! 
+    render json: ["butts butts butts"] 
   end 
 
   def search
