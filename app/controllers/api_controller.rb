@@ -38,13 +38,13 @@ class ApiController < ApplicationController
   end 
 
   def photo
-    # Using known UID to update, need to send UID in post 
-    userID = params[:uid]
-    user = User.find_user(userID)
-    user.dog_picture = params[:dog_picture]
-    user.dog_picture_url = user.dog_picture.url
-    user.save! 
-    render json: [user.dog_picture.url] 
+    userID = @userID
+    render json: [userID]
+    # user = User.find_user(userID)
+    # user.dog_picture = params[:dog_picture]
+    # user.dog_picture_url = user.dog_picture.url
+    # user.save! 
+    # render json: [user.dog_picture.url] 
   end 
 
   def search
