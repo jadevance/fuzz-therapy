@@ -1,8 +1,5 @@
 class User < ApplicationRecord
-
-  # This method associates the attribute ":avatar" with a file attachment
   has_attached_file :dog_picture
-
   validates_attachment_content_type :dog_picture, :content_type => 
   ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
@@ -24,25 +21,42 @@ class User < ApplicationRecord
       user.dog_breed     = auth_hash["dog_breed"]
       user.dog_name      = auth_hash["dog_name"]
       user.dog_age       = auth_hash["dog_age"]
-      
-      # before action: picture url from S3
-      # insert it into the PG database 
-
       user.dog_picture   = auth_hash["dog_picture"]
       user.save!
       
     if user.save
       return user
     else
-      return nil
+      return "Unable to create account, please try again"
     end
-
-    # def self.upload_s3_photo(dog_picture_data)
-    #   user = User.new 
-    #   user.avatar = dog_picture_data
-    #   return user
-    # end 
   end 
+
+  def self.search_for_matches(user_location)
+    location = auth_hash["location"]
+    matches =  []
+    matches << User.find_by(location: location)
+    return matches
+  end
+
+  def self.edit_existing_account(auth_hash)
+      uid                = auth_hash["uid"]
+      user               = User.find_by(uid: uid)
+      user.name          = auth_hash["name"]
+      user.location      = auth_hash["location"]
+      user.availability  = auth_hash["availability"]
+      user.dog_breed     = auth_hash["dog_breed"]
+      user.dog_name      = auth_hash["dog_name"]
+      user.dog_age       = auth_hash["dog_age"]
+      user.dog_picture   = auth_hash["dog_picture"]
+      user.save!
+      
+    if user.save
+      return user
+    else
+      return "Unable to update account, please try again"
+    end
+  end 
+
 end
 
 

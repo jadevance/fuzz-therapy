@@ -12,12 +12,14 @@ class ApiController < ApplicationController
         render json: [user]
       end
     else
+      # debugging code, remove later 
       render json: ["This is a GET response from the API. Hello!"]
     end 
   end 
 
   def create
     if request.post? 
+      @userID = params[:uid]
       user_profile = User.create_new_account(params) 
       if user_profile.nil? 
         render json: ["status: account did not save, please try again later"]
@@ -25,15 +27,25 @@ class ApiController < ApplicationController
         render json: [user_profile]
       end
     else 
+      # debugging code, remove later 
       render json: ["This is a GET response from the API. Hello!"]
     end
   end 
 
+  def edit
+    user = User.edit_existing_account(params)
+    render json: [user]
+  end 
+
   def photo
-    user = User.find_user("12345")
+    user = User.find_user(@userID)
     user.dog_picture = params[:dog_picture]
     user.save! 
     render json: [user.dog_picture.url] 
+  end 
+
+  def search
+
   end 
 
 end
