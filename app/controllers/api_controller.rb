@@ -4,8 +4,8 @@ class ApiController < ApplicationController
 
   def index
     if request.post?
-      @userID = params[:uid]
-      user = User.find_user(@userID)
+      userID = params[:uid]
+      user = User.find_user(userID)
       if user.nil? 
         render json: ["user: does not exist"]
       else 
@@ -19,7 +19,6 @@ class ApiController < ApplicationController
 
   def create
     if request.post? 
-      @userID = params[:uid]
       user_profile = User.create_new_account(params) 
       if user_profile.nil? 
         render json: ["status: account did not save, please try again later"]
@@ -39,7 +38,8 @@ class ApiController < ApplicationController
 
   def photo
     # Using known UID to update, need to send UID in post 
-    user = User.find_user(@userID)
+    userID = params[:uid]
+    user = User.find_user(userID)
     user.dog_picture = params[:dog_picture]
     user.dog_picture_url = user.dog_picture.url
     user.save! 

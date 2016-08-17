@@ -60,7 +60,7 @@ class User < ApplicationRecord
       user.dog_name      = auth_hash["dog_name"]
       user.dog_age       = auth_hash["dog_age"]
       user.dog_picture   = auth_hash["dog_picture"]
-      user.update!
+      user.save!
       
     if user.save
       return user
