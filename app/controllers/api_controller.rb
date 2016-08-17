@@ -24,7 +24,7 @@ class ApiController < ApplicationController
       if user_profile.nil? 
         render json: ["status: account did not save, please try again later"]
       else 
-        render json: [user_profile]
+        render json: ["status: user account has been created"]
       end
     else 
       # debugging code, remove later 
@@ -40,11 +40,11 @@ class ApiController < ApplicationController
   def photo
     userID = @userID
     render json: [userID]
-    # user = User.find_user(userID)
-    # user.dog_picture = params[:dog_picture]
-    # user.dog_picture_url = user.dog_picture.url
-    # user.save! 
-    # render json: [user.dog_picture.url] 
+    user = User.find_user(userID)
+    user.dog_picture = params[:dog_picture]
+    user.dog_picture_url = user.dog_picture.url
+    user.save! 
+    render json: [user.dog_picture.url] 
   end 
 
   def search
