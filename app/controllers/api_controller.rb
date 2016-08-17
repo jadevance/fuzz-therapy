@@ -1,5 +1,5 @@
 class ApiController < ApplicationController
-  force_ssl
+  # force_ssl
   skip_before_action :verify_authenticity_token
   # def initialize(params)
   #   @userID = params[:uid]
@@ -41,11 +41,14 @@ class ApiController < ApplicationController
   end 
 
   def photo
-    user = User.find_user(params[:uid])
-    user.dog_picture = params[:dog_picture]
+    user = params[:uid]
+    # user = User.find_user("12345")
+
+    render json: [user] 
+    # user.dog_picture = params[:dog_picture]
     # user.dog_picture_url = user.dog_picture.url
-    user.save! 
-    render json: ["butts butts butts"] 
+    # user.save! 
+    # render json: ["butts butts butts"] 
   end 
 
   def search
