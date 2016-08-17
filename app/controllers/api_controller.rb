@@ -1,9 +1,6 @@
 class ApiController < ApplicationController
   # force_ssl
   skip_before_action :verify_authenticity_token
-  # def initialize(params)
-  #   @userID = params[:uid]
-  # end 
 
   def index
     if request.post?
@@ -43,11 +40,9 @@ class ApiController < ApplicationController
   def photo
     # user = params[:uid]
     user = User.find_user("103322828381592722715")
-    user.dog_picture = params[:dog_picture]
+    user.dog_picture = StringIO.new(Base64.decode64(params[:dog_picture])
     user.save! 
-    render json: [user.dog_picture.url] 
-    # user.dog_picture_url = user.dog_picture.url
-    # render json: ["butts butts butts"] 
+    render json: ["butts"] 
   end 
 
   def search
