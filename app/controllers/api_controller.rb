@@ -38,11 +38,10 @@ class ApiController < ApplicationController
   end 
 
   def photo
-    # user = params[:uid]
-    user = User.find_user("103322828381592722715")
-    user.dog_picture = StringIO.new(Base64.decode64(params[:dog_picture]))
+    user = User.find_user(params[:uid])
+    user.dog_picture = params[:dog_picture]
     user.save! 
-    render json: ["butts"] 
+    render json: [user.dog_picture.url] 
   end 
 
   def search
