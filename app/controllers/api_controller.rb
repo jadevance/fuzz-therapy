@@ -42,7 +42,7 @@ class ApiController < ApplicationController
 
   def photo
     user = params[:uid]
-    # user = User.find_user("12345")
+    user = User.find_user(user)
 
     render json: [user] 
     # user.dog_picture = params[:dog_picture]
