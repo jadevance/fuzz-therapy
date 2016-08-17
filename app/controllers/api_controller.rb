@@ -19,6 +19,7 @@ class ApiController < ApplicationController
 
   def create
     if request.post? 
+    @userID = params[:uid]
       user_profile = User.create_new_account(params) 
       if user_profile.nil? 
         render json: ["status: account did not save, please try again later"]
@@ -32,8 +33,8 @@ class ApiController < ApplicationController
   end 
 
   def edit
-    user = User.edit_existing_account(params)
-    render json: [user]
+    # user = User.edit_existing_account(params)
+    # render json: [user]
   end 
 
   def photo
@@ -47,8 +48,8 @@ class ApiController < ApplicationController
   end 
 
   def search
-    matches = User.search_for_matches(params[:location])
-    render json[matches]
+    # matches = User.search_for_matches(params[:location])
+    # render json[matches]
   end 
 
 end
