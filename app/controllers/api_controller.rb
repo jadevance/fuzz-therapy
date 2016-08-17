@@ -34,9 +34,6 @@ class ApiController < ApplicationController
     user.dog_picture = params[:dog_picture]
     user.save! 
     render json: [user.dog_picture.url] 
-    # user.avatar = dog_picture_data
-    # endpoint to handle image data from ios
-    # paperclip magic goes here
   end 
 
 end
