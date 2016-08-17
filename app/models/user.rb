@@ -3,14 +3,6 @@ class User < ApplicationRecord
   validates_attachment_content_type :dog_picture, :content_type => 
   ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
-  # # After initialization, set default values
-  # after_initialize :set_default_values
-  
-  # def set_default_values
-  #   # Only set if dog_picture IS NOT set
-  #   self.dog_picture ||= "http://i.imgur.com/d2EwLHX.jpg"
-  # end
-
   def self.find_user(uid) 
     user = User.find_by(uid: uid)
     if !user.nil?

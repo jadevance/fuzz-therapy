@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160817212958) do
+ActiveRecord::Schema.define(version: 20160817221325) do
 
   create_table "users", force: :cascade do |t|
     t.datetime "created_at",               null: false
@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 20160817212958) do
     t.integer  "dog_picture_file_size"
     t.datetime "dog_picture_updated_at"
     t.string   "dog_picture_url"
-    t.string   "dog_picture"
   end
 
 end
