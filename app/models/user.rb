@@ -25,7 +25,7 @@ class User < ApplicationRecord
     matches = Array.new
     matches << User.where(location: user_location).limit(10)
     if matches != nil 
-      return matches
+      return matches.flatten!
     else 
       return "No matches found"
     end
@@ -48,11 +48,6 @@ class User < ApplicationRecord
       return "Unable to update account, please try again"
     end
   end 
-
-  # def self.update_dog_url(user)
-
-  # end 
-
 end
 
 
