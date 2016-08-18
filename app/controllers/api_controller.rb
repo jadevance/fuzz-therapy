@@ -1,5 +1,5 @@
 class ApiController < ApplicationController
-  # force_ssl
+  force_ssl
   skip_before_action :verify_authenticity_token
 
   def index
@@ -42,14 +42,14 @@ class ApiController < ApplicationController
     user.dog_picture = params[:dog_picture]
     wrong_url = user.dog_picture.url(:original)
     correct_url = wrong_url.gsub(/^http:\/\/s3.amazonaws.com\/jvance-fuzztherapy-assets/, 'jvance-fuzztherapy-assets.s3.amazonaws.com')
-    # user.dog_picture_url = user.dog_picture.url(:original)
-    # user.save! 
+    user.dog_picture_url = correct_url
+    user.save! 
     render json: [correct_url] 
   end 
 
   def search
-    # matches = User.search_for_matches(params[:location])
-    # render json[matches]
+    matches = User.search_for_matches(params[:location])
+    render json[matches]
   end 
 
 end
