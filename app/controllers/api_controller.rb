@@ -54,7 +54,7 @@ class ApiController < ApplicationController
   end 
 
   def search
-    matches = User.search_for_matches("Seattle")
+    matches = User.search_for_matches(params[:location])
     render json: matches
   end 
 
