@@ -31,32 +31,32 @@ class User < ApplicationRecord
   end 
 
   def self.search_for_matches(user_location)
-    # location = auth_hash["location"]
-    # matches =  []
-    # matches << User.fuzzy_search(location: location)
-    # if matches != nil 
-    #   return matches
-    # else 
-    #   return "No matches found"
-    # end
+    location = auth_hash["location"]
+    matches =  []
+    matches << User.fuzzy_search(location: location)
+    if matches != nil 
+      return matches
+    else 
+      return "No matches found"
+    end
   end
 
   def self.edit_existing_account(auth_hash)
-    #   uid                = auth_hash["uid"]
-    #   user               = User.find_by(uid: uid)
-    #   user.name          = auth_hash["name"]
-    #   user.location      = auth_hash["location"]
-    #   user.availability  = auth_hash["availability"]
-    #   user.dog_breed     = auth_hash["dog_breed"]
-    #   user.dog_name      = auth_hash["dog_name"]
-    #   user.dog_age       = auth_hash["dog_age"]
-    #   user.save!
+      uid                = auth_hash["uid"]
+      user               = User.find_by(uid: uid)
+      user.name          = auth_hash["name"]
+      user.location      = auth_hash["location"]
+      user.availability  = auth_hash["availability"]
+      user.dog_breed     = auth_hash["dog_breed"]
+      user.dog_name      = auth_hash["dog_name"]
+      user.dog_age       = auth_hash["dog_age"]
+      user.save!
       
-    # if user.save
-    #   return user
-    # else
-    #   return "Unable to update account, please try again"
-    # end
+    if user.save
+      return user
+    else
+      return "Unable to update account, please try again"
+    end
   end 
 
 end

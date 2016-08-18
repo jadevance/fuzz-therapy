@@ -40,8 +40,11 @@ class ApiController < ApplicationController
   def photo
     user = User.find_user(params[:uid])
     user.dog_picture = params[:dog_picture]
+    wrong_url = user.dog_picture.url(:original)
+    wrong_url.gsub(/^http:\/\/s3.amazonaws.com\/jvance-fuzztherapy-assets/, 'jvance-fuzztherapy-assets.s3.amazonaws.com')
+    user.dog_picture_url = user.dog_picture.url(:original)
     user.save! 
-    render json: [user.dog_picture.url] 
+    render json: [user.dog_picture.url(:original)] 
   end 
 
   def search
