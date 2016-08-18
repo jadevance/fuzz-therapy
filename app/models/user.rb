@@ -3,15 +3,6 @@ class User < ApplicationRecord
   validates_attachment_content_type :dog_picture, :content_type => 
   ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
-  def self.find_user(uid) 
-    user = User.find_by(uid: uid)
-    if !user.nil?
-      return user
-    else 
-      return nil
-    end 
-  end 
-
   def self.create_new_account(auth_hash)
       user               = User.new 
       user.uid           = auth_hash["uid"]
@@ -59,7 +50,7 @@ class User < ApplicationRecord
   end 
 
   # def self.update_dog_url(user)
-    
+
   # end 
 
 end
