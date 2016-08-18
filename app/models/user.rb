@@ -31,9 +31,8 @@ class User < ApplicationRecord
   end 
 
   def self.search_for_matches(user_location)
-    location = auth_hash["location"]
-    matches =  []
-    matches << User.fuzzy_search(location: location)
+    matches = Array.new
+    matches << User.where(location: user_location).limit(10)
     if matches != nil 
       return matches
     else 
@@ -58,6 +57,10 @@ class User < ApplicationRecord
       return "Unable to update account, please try again"
     end
   end 
+
+  # def self.update_dog_url(user)
+    
+  # end 
 
 end
 

@@ -1,10 +1,9 @@
 class ApiController < ApplicationController
-  force_ssl
+  # force_ssl
   skip_before_action :verify_authenticity_token
 
   def index
     if request.post?
-      userID = params[:uid]
       user = User.find_user(userID)
       if user.nil? 
         render json: ["user: does not exist"]
@@ -38,18 +37,25 @@ class ApiController < ApplicationController
   end 
 
   def photo
-    user = User.find_user(params[:uid])
+    user = User.find_by(uid: params[:uid])
     user.dog_picture = params[:dog_picture]
+    
     wrong_url = user.dog_picture.url(:original)
     correct_url = wrong_url.gsub(/^http:\/\/s3.amazonaws.com\/jvance-fuzztherapy-assets/, 'jvance-fuzztherapy-assets.s3.amazonaws.com')
-    user.dog_picture_url = correct_url
+    
+    user.dog_picture_url = correct_url.to_s
     user.save! 
-    render json: [correct_url] 
+
+    # if user.save?
+      render json: [user] 
+    # else 
+    #   render json: ["butts"]
+    # end 
   end 
 
   def search
-    matches = User.search_for_matches(params[:location])
-    render json[matches]
+    matches = User.search_for_matches("Seattle")
+    render json: matches
   end 
 
 end
