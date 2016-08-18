@@ -46,11 +46,11 @@ class ApiController < ApplicationController
     user.dog_picture_url = correct_url.to_s
     user.save! 
 
-    # if user.save?
+    if user.save?
       render json: [user] 
-    # else 
-    #   render json: ["butts"]
-    # end 
+    else 
+      render json: ["Error: Photo could not be saved."]
+    end 
   end 
 
   def search
