@@ -37,7 +37,8 @@ class ApiController < ApplicationController
   end 
 
   def photo
-    user = User.find_by(uid: params[:uid])
+    uid = params[:uid]
+    user = User.find_by(uid: uid)
     user.dog_picture = params[:dog_picture]
     
     wrong_url = user.dog_picture.url(:original)
@@ -46,11 +47,8 @@ class ApiController < ApplicationController
     user.dog_picture_url = correct_url.to_s
     user.save! 
 
-    if user.save?
-      render json: [user] 
-    else 
-      render json: ["Error: Photo could not be saved."]
-    end 
+    render json: [user] 
+
   end 
 
   def search
