@@ -1,5 +1,17 @@
-uid,name,location,availability,dog_breed,dog_name,dog_age,dog_picture
-12345,Jade,Seattle,Always,Cattle dog husky,Harley,10,http://i.imgur.com/k1yVI.jpg
-24689,Jade,Seattle,Always,Cattle dog husky,Harley,10,http://i.imgur.com/k1yVI.jpg
-36912,Jade,Seattle,Always,Cattle dog husky,Harley,10,http://i.imgur.com/k1yVI.jpg
-103322828381592722715,Jade,Seattle,Always,Cattle dog husky,Harley,10,http://i.imgur.com/k1yVI.jpg
+uid,name,location,availability,dog_breed,dog_name,dog_age
+103322828381592722715,Jade,Seattle,Always,Cattle Dog Husky,Harley,10
+1,Rowan,Seattle,Afternoons,Golden Retriever,Alfred,8
+2,Sarah,Seattle,Mornings,Adorable,Nemesh,3
+3,Nadine,Seattle,Evenings,Fluffy,Casper,4
+4,Jillian,Seattle,Mornings,Adorable,Indiana Bones,5
+5,Alysia,Seattle,Afternoons,Adorable,ChaCha,3
+6,Chef,Seattle,Afternoons,Shibe,Isabel,6
+7,Adriana,Seattle,Afternoons,Cute,Misha,7
+8,Adriana,Seattle,Afternoons,Cute,Jack,7
+9,Jillian,Seattle,Mornings,Adorbale,Persephone,2
+10,Alex,Seattle,Evenings,Golden Retriever,Tesla,1
+11,Nicole,Seattle,Always,Black Lab,Scamp,10
+12,Risha,Seattle,Evenings,Australian Cattle Dog,Lucky,4
+13,Cristal,Seattle,Mornings,Black Lab,Peanut,8
+14,Justine,Seattle,Always,Fluff Munster,Snuffles,2
+15,Jess,Seattle,Afternoons,Australian Adorbs,Peabody,12
