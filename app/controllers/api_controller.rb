@@ -6,9 +6,9 @@ class ApiController < ApplicationController
     if request.post?
       user = User.find_by(uid: params[:uid])
       if user.nil? 
-        render json: ["user: does not exist"], status: 200
+        render json: ["user: does not exist"]
       else 
-        render json: [user], status: 200 
+        render json: [user]
       end
     else
       # debugging code, remove later 
@@ -18,13 +18,8 @@ class ApiController < ApplicationController
 
   def create
     if request.post? 
-    @userID = params[:uid]
       user_profile = User.create_new_account(params) 
-      if user_profile.nil? 
-        render json: ["status: account did not save, please try again later"]
-      else 
-        render json: ["status: user account has been created"]
-      end
+      render json: ["status: user account has been created"]
     else 
       # debugging code, remove later 
       render json: ["This is a GET response from the API. Hello!"]
@@ -40,15 +35,12 @@ class ApiController < ApplicationController
     uid = params[:uid]
     user = User.find_by(uid: uid)
     user.dog_picture = params[:dog_picture]
-    
     wrong_url = user.dog_picture.url(:original)
     correct_url = wrong_url.gsub(/^http:\/\/s3.amazonaws.com\/jvance-fuzztherapy-assets/, 'jvance-fuzztherapy-assets.s3.amazonaws.com')
-    
     user.dog_picture_url = correct_url.to_s
     user.save! 
 
     render json: [user] 
-
   end 
 
   def search

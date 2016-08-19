@@ -16,8 +16,6 @@ class User < ApplicationRecord
       
     if user.save
       return user
-    else
-      return "Unable to create account, please try again"
     end
   end 
 
@@ -31,26 +29,19 @@ class User < ApplicationRecord
     end
   end
 
-  def self.edit_existing_account(auth_hash)
-      uid                = auth_hash["uid"]
-      user               = User.find_by(uid: uid)
-      user.name          = auth_hash["name"]
-      user.location      = auth_hash["location"]
-      user.availability  = auth_hash["availability"]
-      user.dog_breed     = auth_hash["dog_breed"]
-      user.dog_name      = auth_hash["dog_name"]
-      user.dog_age       = auth_hash["dog_age"]
-      user.save!
+  # def self.edit_existing_account(auth_hash)
+  #     uid                = auth_hash["uid"]
+  #     user               = User.find_by(uid: uid)
+  #     user.name          = auth_hash["name"]
+  #     user.location      = auth_hash["location"]
+  #     user.availability  = auth_hash["availability"]
+  #     user.dog_breed     = auth_hash["dog_breed"]
+  #     user.dog_name      = auth_hash["dog_name"]
+  #     user.dog_age       = auth_hash["dog_age"]
+  #     user.save!
       
-    if user.save
-      return user
-    else
-      return "Unable to update account, please try again"
-    end
-  end 
+  #   if user.save
+  #     return user
+  #   end
+  # end 
 end
-
-
-
-
-
