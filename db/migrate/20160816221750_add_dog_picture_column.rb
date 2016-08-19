@@ -6,11 +6,4 @@ class AddDogPictureColumn < ActiveRecord::Migration[5.0]
     remove_column :users, :avatar_updated_at
     remove_column :users, :dog_picture
   end
-  def self.up
-    add_attachment :users, :dog_picture
-  end
-
-  def self.down
-    remove_attachment :users, :dog_picture
-  end
 end
