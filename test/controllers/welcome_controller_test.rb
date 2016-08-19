@@ -1,7 +1,8 @@
 require 'test_helper'
 
 class WelcomeControllerTest < ActionDispatch::IntegrationTest
-  # test "the truth" do
-  #   assert true
-  # end
+  test "get root path" do
+    get '/'
+    assert_response :success
+  end
 end

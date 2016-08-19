@@ -1,0 +1,52 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined. If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+
+first_account:
+  uid: "1234567890"
+  name: "Awesomesauce McLadypants"
+  location: "Seattle"
+  availability: "Always"
+  dog_name: "Harlz"
+  dog_breed: "The best breed"
+  dog_age: 10
+  dog_picture_file_name: "dog.jpg"
+  dog_picture_content_type: "image"
+  dog_picture_file_size: 12345
+  dog_picture_updated_at: 2016-08-18 20:05:40.091371
+  dog_picture_url:
+  created_at: 2016-08-18 20:05:40.091371
+  updated_at: 2016-08-18 20:05:40.091371
+second_account:
+  uid: "0987654321"
+  name: "Awesomesauce McLadypants"
+  location: "Seattle"
+  availability: "Always"
+  dog_name: "Harlz"
+  dog_breed: "The best breed"
+  dog_age: 10
+  dog_picture_file_name: "dog.jpg"
+  dog_picture_content_type: "image"
+  dog_picture_file_size: 12345
+  dog_picture_updated_at: 2016-08-18 20:05:40.091371
+  dog_picture_url:
+  created_at: 2016-08-18 20:05:40.091371
+  updated_at: 2016-08-18 20:05:40.091371
+second_account:
+  uid: "2468101214"
+  name: "Awesomesauce McLadypants"
+  location: "Not Seattle"
+  availability: "Always"
+  dog_name: "Harlz"
+  dog_breed: "The best breed"
+  dog_age: 10
+  dog_picture_file_name: "dog.jpg"
+  dog_picture_content_type: "image"
+  dog_picture_file_size: 12345
+  dog_picture_updated_at: 2016-08-18 20:05:40.091371
+  dog_picture_url:
+  created_at: 2016-08-18 20:05:40.091371
+  updated_at: 2016-08-18 20:05:40.091371
