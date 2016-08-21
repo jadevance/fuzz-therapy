@@ -10,9 +10,6 @@ class ApiController < ApplicationController
       else 
         render json: [user]
       end
-    else
-      # debugging code, remove later 
-      render json: ["This is a GET response from the API. Hello!"]
     end 
   end 
 

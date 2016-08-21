@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
   root to: "welcome#index"
-  
-  get 'api', to: 'api#index'
   post 'api', to: 'api#index'
 
   get 'api/create', to: 'api#create'
