@@ -21,9 +21,9 @@ class User < ApplicationRecord
 
   def self.search_for_matches(user_location)
     matches = Array.new
-    matches << User.where(location: user_location).limit(10)
+    matches << User.where(location: user_location).limit(20)
     if matches != nil 
-      return matches.flatten!
+      return matches.shuffle.flatten!
     else 
       return "No matches found"
     end
