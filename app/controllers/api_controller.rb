@@ -1,6 +1,7 @@
 class ApiController < ApplicationController
   # force_ssl
   skip_before_action :verify_authenticity_token
+  # http_basic_authenticate_with name:ENV["API_AUTH_NAME"], password:ENV["API_AUTH_PASSWORD"]
 
   def index
     if request.post?
@@ -17,15 +18,14 @@ class ApiController < ApplicationController
     if request.post? 
       user_profile = User.create_new_account(params) 
       render json: ["status: user account has been created"]
-    else 
-      # debugging code, remove later 
-      render json: ["This is a GET response from the API. Hello!"]
     end
   end 
 
-  def edit
-    # user = User.edit_existing_account(params)
-    # render json: [user]
+  def update
+    if request.put?
+      user = User.edit_existing_account(params)
+      render json: [user]
+    end
   end 
 
   def photo
@@ -36,13 +36,10 @@ class ApiController < ApplicationController
     correct_url = wrong_url.gsub(/^http:\/\/s3.amazonaws.com\/jvance-fuzztherapy-assets/, 'jvance-fuzztherapy-assets.s3.amazonaws.com')
     user.dog_picture_url = correct_url.to_s
     user.save! 
-
-    render json: [user] 
   end 
 
   def search
     matches = User.search_for_matches(params[:location])
     render json: matches
   end 
-
 end

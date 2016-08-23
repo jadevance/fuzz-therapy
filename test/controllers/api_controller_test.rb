@@ -14,7 +14,16 @@ class ApiControllerTest < ActionDispatch::IntegrationTest
       dog_name: "Harlz",
       dog_breed: "The best breed",
       dog_age: 10,
-      dog_picture: "dog.jpg",
+    }
+
+    @user_modified_account = { 
+      uid: "1234567890",
+      name: "Awesomesauce McLadypants",
+      location: "Bellingham",
+      availability: "Sometimes",
+      dog_name: "Harlz",
+      dog_breed: "The best breed",
+      dog_age: 10,
     }
   end
   
@@ -23,7 +32,6 @@ class ApiControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "get index" do
-    get '/api'
     post '/api', 
     params: {uid: '1234567890'}
     assert_response :success
@@ -41,11 +49,6 @@ class ApiControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end 
 
-  test "get api/create" do 
-    get '/api/create'
-    assert_response :success
-  end 
-
   test "post profile to create" do
     post '/api/create', 
     params: @user_account
@@ -58,25 +61,29 @@ class ApiControllerTest < ActionDispatch::IntegrationTest
     end
   end
 
+  test "update an account already created" do
+    post '/api/create', params: @user_account
+    put '/api/update', params: @user_modified_account
+    assert_response :success
+  end
+
   test "Search returns results" do 
     post '/api/search',
     params: {location: "Seattle"}
     assert_response :success
   end 
 
-    test "Search returns no results if not in DB" do 
+  test "Search returns no results if not in DB" do 
     post '/api/search',
     params: {location: "Kalamazoo"}
     assert_response :success
   end 
 
-  # I have no idea how to test multipart form data and photos
-  # figure it out later 
 
-  # test "post a photo" do 
-  #   post 'api/photo',
-  #   params: @user_account
-  #   assert_response :success
-  # end 
-
+  test "should create image" do
+    uid = "1234567890"
+    image = fixture_file_upload('../fixtures/jadedog.png', 'image/png')
+    post '/api/photo', params:{uid: uid, dog_picture: image}
+    assert_response :success
+  end
 end
