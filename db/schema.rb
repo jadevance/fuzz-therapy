@@ -13,13 +13,13 @@
 ActiveRecord::Schema.define(version: 20160824153629) do
 
   create_table "users", force: :cascade do |t|
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
     t.string   "name",                     null: false
     t.string   "location",                 null: false
     t.string   "availability",             null: false
     t.string   "uid",                      null: false
-    t.string   "dog_name",                 null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.string   "dog_name"
     t.integer  "dog_age"
     t.string   "dog_breed"
     t.string   "dog_picture_file_name"
