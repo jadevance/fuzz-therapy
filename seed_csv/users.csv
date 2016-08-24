@@ -1,18 +1,19 @@
-uid,name,location,availability,dog_breed,dog_name,dog_age
-103322828381592722715,Jade,Seattle,Always,Cattle Dog Husky,Harley,10
-1,Rowan,Seattle,Afternoons,Golden Retriever,Alfred,8
-2,Sarah,Seattle,Mornings,Adorable,Nemesh,3
-3,Nadine,Seattle,Evenings,Fluffy,Casper,4
-4,Jillian,Seattle,Mornings,Adorable,Indiana Bones,5
-5,Alysia,Seattle,Afternoons,Adorable,ChaCha,3
-6,Chef,Seattle,Afternoons,Shibe,Isabel,6
-7,Adriana,Seattle,Afternoons,Cute,Misha,7
-8,Adriana,Seattle,Afternoons,Cute,Jack,7
-9,Jillian,Seattle,Mornings,Adorbale,Persephone,2
-10,Deirdre,Seattle,Evenings,Rescue Mutt,Baker,8
-11,Nicole,Seattle,Always,Black Lab,Scamp,10
-12,Risha,Seattle,Evenings,Australian Cattle Dog,Lucky,4
-13,Cristal,Seattle,Mornings,Black Lab,Peanut,8
-14,Justine,Seattle,Always,Fluff Munster,Snuffles,2
-15,Jess,Seattle,Afternoons,Australian Adorbs,Peabody,12
-16,Alex,Seattle,Mornings,Retriever,Bishop,3
+uid,name,location,availability,dog_breed,dog_name,dog_age,email
+1,Sarah,Seattle,Mornings,Adorable,Nemesh,3,fuzztherapyapp@gmail.com
+2,Nadine,Seattle,Evenings,Fluffy,Casper,4,fuzztherapyapp@gmail.com
+3,Jillian,Seattle,Mornings,Adorable,Indiana Bones,5,fuzztherapyapp@gmail.com
+4,Alysia,Seattle,Afternoons,Adorable,ChaCha,3,fuzztherapyapp@gmail.com
+5,Deirdre,Seattle,Evenings,Rescue Mutt,Baker,8,fuzztherapyapp@gmail.com
+6,Adriana,Seattle,Afternoons,Cute,Misha,7,fuzztherapyapp@gmail.com
+7,Adriana,Seattle,Afternoons,Cute,Jack,7,fuzztherapyapp@gmail.com
+8,Cristal,Seattle,Mornings,Adorable,Anna,8,fuzztherapyapp@gmail.com
+9,Jeremy,Seattle,Afternoons,Chihuahua,Rosa,8,fuzztherapyapp@gmail.com
+10,Chef,Seattle,Afternoons,Shibe,Isabel,6,fuzztherapyapp@gmail.com
+11,Nicole,Seattle,Always,Black Lab,Scamp,10,fuzztherapyapp@gmail.com
+12,Risha,Seattle,Evenings,Australian Cattle Dog,Lucky,4,fuzztherapyapp@gmail.com
+13,Cristal,Seattle,Mornings,Black Lab,Peanut,8,fuzztherapyapp@gmail.com
+14,Justine,Seattle,Always,Fluff Munster,Snuffles,2,fuzztherapyapp@gmail.com
+15,Jess,Seattle,Afternoons,Australian Adorbs,Peabody,12,fuzztherapyapp@gmail.com
+16,Alex,Seattle,Mornings,Retriever,Bishop,3,fuzztherapyapp@gmail.com
+17,Rowan,Seattle,Afternoons,Golden Retriever,Alfred,5,fuzztherapyapp@gmail.com
+103322828381592722715,Jade,Seattle,Always,Cattle Dog Husky,Harley,10,fuzztherapyapp@gmail.com
