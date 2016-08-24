@@ -12,16 +12,13 @@ class User < ApplicationRecord
       user.dog_breed     = auth_hash["dog_breed"]
       user.dog_name      = auth_hash["dog_name"]
       user.dog_age       = auth_hash["dog_age"]
+      user.email         = auth_hash["email"]
       user.save!
-      
-    if user.save
-      return user
-    end
   end 
 
   def self.search_for_matches(user_location)
     matches = Array.new
-    matches << User.where(location: user_location).limit(15)
+    matches << User.where(location: user_location).limit(20)
     if matches != nil 
       return matches.flatten!
     end
