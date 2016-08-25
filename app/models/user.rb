@@ -18,7 +18,7 @@ class User < ApplicationRecord
 
   def self.search_for_matches(user_location)
     matches = Array.new
-    matches << User.where(location: user_location).limit(20)
+    matches << User.where(location: user_location).limit(15)
     if matches != nil 
       return matches.flatten!
     end
