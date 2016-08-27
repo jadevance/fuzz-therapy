@@ -13,7 +13,6 @@ The API is configured to use the gem Paperclip to store images on S3.
 3. `bundle install`
 4. Setup an account on Amazon AWS/IAM/S3
 5. You will need the following for .env parameters: 
-
 + AWS_ACCESS_KEY
 + AWS_SECRET_ACCESS_KEY
 + S3_BUCKET_NAME
