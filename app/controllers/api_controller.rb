@@ -1,5 +1,5 @@
 class ApiController < ApplicationController
-  force_ssl
+  # force_ssl
   skip_before_action :verify_authenticity_token
   # http_basic_authenticate_with name:ENV["API_AUTH_NAME"], password:ENV["API_AUTH_PASSWORD"]
 
