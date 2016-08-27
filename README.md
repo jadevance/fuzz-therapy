@@ -13,10 +13,10 @@ The API is configured to use the gem Paperclip to store images on S3.
 3. `bundle install`
 4. Setup an account on Amazon AWS/IAM/S3
 5. You will need the following for .env parameters: 
-  + AWS_ACCESS_KEY
-  + AWS_SECRET_ACCESS_KEY
-  + S3_BUCKET_NAME
-  + AWS_REGION
++ AWS_ACCESS_KEY
++ AWS_SECRET_ACCESS_KEY
++ S3_BUCKET_NAME
++ AWS_REGION
 
 ## Search by UID
 Search requests are POST requests to the `/api` endpoint with the
@@ -28,7 +28,7 @@ following parameters:
 
 
 ## Search by location
-Section requests are GET requests to the `/api/search` endpoint with the
+Section requests are POST requests to the `/api/search` endpoint with the
 following parameters(:page is optional):
 
 | parameter   | data type | description |
